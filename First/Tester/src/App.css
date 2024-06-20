@@ -1,0 +1,65 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App input {
+  border-radius: 10px;
+  border-color: cyan;
+  width: 200px;
+  height: 10px;
+  padding: 0.5rem;
+}
+hr {
+  margin-block: .5rem;
+}
+
+.wrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aquamarine;
+  padding-block: 2rem;
+}
+
+p {
+  margin: 1rem;
+}
+
+button {
+  background-color: cyan;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 15px;
+  width: 80px;
+  cursor: pointer;
+}
+
+button:disabled{
+  background-color: #8f8d8d;
+  cursor: not-allowed;
+}
+.errorMessage {
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+span {
+  font-weight: bold;
+}
