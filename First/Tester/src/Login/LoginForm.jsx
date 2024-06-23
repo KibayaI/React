@@ -40,12 +40,12 @@ export default function LoginForm() {
     <div className="wrapper">
       <div className="row">
         <label htmlFor={"email"}>Email</label>
-        <input onChange={emailCheck} id={"email"} type={"email"} />
+        <input className="input-field" placeholder="Enter your email" onChange={emailCheck} id={"email"} type={"email"} />
       </div>
       <br />
       <div className="row">
         <label htmlFor={"password"}>Password</label>
-        <input onChange={passCheck} id={"password"} type={"password"} />
+        <input className="input-field" placeholder="Enter your password" onChange={passCheck} id={"password"} type={"password"} />
       </div>
 
       {/* Place login error inside this div. Show the div ONLY if there are login errors. */}
