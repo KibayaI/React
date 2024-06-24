@@ -1,7 +1,61 @@
-img {
-    width: 300px;
-    height: auto;
-    border-radius: 0;
-    rotate: -30deg;
-    margin-bottom: 5rem;
+.pic img {
+  /* width: 35vw; */
+  width: 28rem;
+  height: auto;
+  border-radius: 0;
+  rotate: -30deg;
+  margin-bottom: 5rem;
+  position: absolute;
+  top: 70px;
+  left: -100px;
+}
+
+.product-card {
+  height: 90vh;
+}
+
+.pic {
+  position: relative;
+  height: 23rem;
+  background-color: yellow;
+}
+
+.description {
+    width: 22rem;
+  height: 21rem;
+  padding: 1rem 3rem;
+}
+
+.nike-card {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 3.5fr;
+  height: 80vh;
+}
+
+.buttons {
+  /* width: 100px; */
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.buttons button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.price-div {
+    display: flex;
+}
+
+.buy {
+  border-radius: 20px;
+  width: 7rem;
+  color: white;
+  /* padding: 0 1rem; */
 }

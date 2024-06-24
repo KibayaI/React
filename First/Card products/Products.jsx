@@ -89,7 +89,7 @@ function Products() {
   ];
 
   return (
-    <div>
+    <div className="product-card">
       <Nike list={initialProducts[0]} />
     </div>
   );

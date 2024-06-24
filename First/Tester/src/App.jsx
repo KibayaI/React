@@ -155,7 +155,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <input
+      <input
         className="input-field"
         type="text"
         onChange={handleSearch}
@@ -174,7 +174,7 @@ function App() {
         search={search}
         filtered={filtered}
         setFiltered={setFiltered}
-      /> */}
+      />
       <hr />
       <Products />
     </div>

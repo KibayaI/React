@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Button({ color, setColor, setImgIndex }) {
+
   function colorChange(event) {
     setColor(event.target.name);
     if (color === "red") {
@@ -12,15 +13,14 @@ function Button({ color, setColor, setImgIndex }) {
     }
   }
 
-      const background = {
-        backgroundColor: color,
-        color: "white",
-      };
+  const background = {
+    backgroundColor: color,
+    color: "white",
+  };
 
   return (
-
     <div>
-      <button style={background} onClick={colorChange} name={color}>try</button>
+      <button style={background} onClick={colorChange} name={color}></button>
     </div>
   );
 }

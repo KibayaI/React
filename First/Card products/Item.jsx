@@ -6,8 +6,9 @@ function Item({ list }) {
   const [imgIndex, setImgIndex] = useState(0);
 
   const background = {
+    // backgroundColor: "green",
     backgroundColor: color,
-    border: "1px solid cyan"
+    // border: "1px solid cyan",
   };
 
   const colorColors = {
@@ -15,49 +16,68 @@ function Item({ list }) {
   };
 
   const butColor = {
-    color: color
-  }
+    color: color,
+  };
 
-  const descBack ={
-    backgroundColor: "white"
-  }
+  const descBack = {
+    backgroundColor: "white",
+  };
 
   const r = {
     backgroundColor: color,
-    padding: "2rem",
+    padding: "1rem 10rem",
   };
 
+  const [outline, setOutline] = useState(false);
+
+  const withOuline = {
+    outline: "2px solid black",
+    outlineOffset: "3px",
+  };
+
+  const isOutline = outline ? background : withOuline;
+
   return (
-    <div style={r}>
-      <div style={background}>
+    <div className="nike-card" style={r}>
+      <div className="pic" style={background}>
         <h1>NIKE</h1>
         <img src={list.imageUrl[imgIndex]} />
       </div>
-      <div style={descBack}>
+      <div className="description" style={descBack}>
         <h1 style={colorColors}>{list.title}</h1>
         <p>{list.collection}</p>
         <p>{list.description}</p>
-        <p>Availabe Colours: </p>
 
-        <Button
-          setImgIndex={setImgIndex}
-          setColor={setColor}
-          color={list.availableColors[1]}
-        />
-        <Button
-          setImgIndex={setImgIndex}
-          setColor={setColor}
-          color={list.availableColors[0]}
-        />
-        <Button
-          setImgIndex={setImgIndex}
-          setColor={setColor}
-          color={list.availableColors[2]}
-        />
+        <div className="buttons">
+          <p>Availabe Colours: </p>
 
-        <p style={butColor}>{list.price}</p>
+          <Button
+            setImgIndex={setImgIndex}
+            setColor={setColor}
+            color={list.availableColors[1]}
+            outline={isOutline}
+          />
+          <Button
+            setImgIndex={setImgIndex}
+            setColor={setColor}
+            color={list.availableColors[0]}
+            outline={isOutline}
+          />
+          <Button
+            setImgIndex={setImgIndex}
+            setColor={setColor}
+            color={list.availableColors[2]}
+            outline={isOutline}
+          />
+        </div>
 
-        <button style={background}>df</button>
+        <div className="price-div">
+          <p style={butColor}>{list.price}</p>
+
+          <button className="buy" style={background}>
+            BUY NOW
+          </button>
+        </div>
       </div>
     </div>
   );
