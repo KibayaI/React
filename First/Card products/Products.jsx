@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, {useState, createContext} from "react";
 import Nike from "./Nike";
 import { black, red, orange } from "./assests";
 import "./products.css";
+import Button from "./Components/Button";
+
+export const cartContext = createContext();
+export const updatecartContext = createContext();
 
 function Products() {
   const initialProducts = [
@@ -88,10 +92,40 @@ function Products() {
     },
   ];
 
+
+const [count, useCount] = useState(1)
+
+function decrement() {
+  if(count>0){
+  useCount(count - 1);}
+  else{
+    useCount(count)
+  }
+}
+
+function increment (){
+  useCount(count+1)
+}
+
   return (
-    <div className="product-card">
-      <Nike list={initialProducts[0]} />
-    </div>
+    <cartContext.Provider value={count}>
+      <updatecartContext.Provider value={useCount}>
+        <div className="product-card">
+          <Nike list={initialProducts[0]} />
+          {/* <Button color={"red"}/> */}
+          {/* <button></button> */}
+          <button onClick={decrement}>-</button>
+          <label>{count}</label>
+          <button onClick={increment}>+</button>
+
+          <div>
+            price: {initialProducts[0].price * count}
+          </div>
+
+          {/* <button></button> */}
+        </div>
+      </updatecartContext.Provider>
+    </cartContext.Provider>
   );
 }
 

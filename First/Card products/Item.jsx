@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Button from "./Components/Button";
+import { cartContext, updatecartContext } from "./Products";
 
 function Item({ list }) {
   const [color, setColor] = useState("black");
   const [imgIndex, setImgIndex] = useState(0);
+  const [colorAlpah, setColorAlpha] = useState("");
 
   const background = {
-    // backgroundColor: "green",
-    backgroundColor: color,
-    // border: "1px solid cyan",
+    // backgroundColor: `mix(${color}, white, 5%)`,
+    backgroundColor: colorAlpah,
   };
 
   const colorColors = {
@@ -27,6 +28,9 @@ function Item({ list }) {
     backgroundColor: color,
     padding: "1rem 10rem",
   };
+  const re = {
+    backgroundColor: color,
+  };
 
   const [outline, setOutline] = useState(false);
 
@@ -36,6 +40,13 @@ function Item({ list }) {
   };
 
   const isOutline = outline ? background : withOuline;
+
+  const addContext = useContext(cartContext);
+  const updateContext = useContext(updatecartContext);
+
+  function addCount() {
+    updateContext(addContext + 1);
+  }
 
   return (
     <div className="nike-card" style={r}>
@@ -53,18 +64,21 @@ function Item({ list }) {
 
           <Button
             setImgIndex={setImgIndex}
+            setColorAlpha={setColorAlpha}
             setColor={setColor}
             color={list.availableColors[1]}
             outline={isOutline}
           />
           <Button
             setImgIndex={setImgIndex}
+            setColorAlpha={setColorAlpha}
             setColor={setColor}
             color={list.availableColors[0]}
             outline={isOutline}
           />
           <Button
             setImgIndex={setImgIndex}
+            setColorAlpha={setColorAlpha}
             setColor={setColor}
             color={list.availableColors[2]}
             outline={isOutline}
@@ -72,12 +86,13 @@ function Item({ list }) {
         </div>
 
         <div className="price-div">
-          <p style={butColor}>{list.price}</p>
+          <p style={butColor}>Ksh....{list.price}</p>
 
           <button className="buy" style={background}>
             BUY NOW
           </button>
         </div>
+        <button onClick={addCount}>Add to Cart</button>
       </div>
     </div>
   );

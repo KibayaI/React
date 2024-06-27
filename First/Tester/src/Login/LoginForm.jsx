@@ -5,7 +5,7 @@ export default function LoginForm() {
     const value = event.target.value;
     setEmail(value);
     setIsButtonDisabled(value === "" || pass.length < 7);
-    setErr("")
+    setErr("");
   }
 
   function passCheck(event) {
@@ -20,9 +20,8 @@ export default function LoginForm() {
   const [pass, setPass] = useState("");
   const [err, setErr] = useState();
 
-
   const credentials = {
-    email: "qwe",
+    email: "hackersthing45@gmail.com",
     password: "1234567",
   };
 
@@ -33,19 +32,31 @@ export default function LoginForm() {
     ) {
       alert("Login Successful!!!");
     } else {
-      setErr("Login Failed!!!")
+      setErr("Login Failed!!!...Wrong Credentials");
     }
   }
   return (
     <div className="wrapper">
       <div className="row">
         <label htmlFor={"email"}>Email</label>
-        <input className="input-field" placeholder="Enter your email" onChange={emailCheck} id={"email"} type={"email"} />
+        <input
+          className="input-field"
+          placeholder="Enter your email"
+          onChange={emailCheck}
+          id={"email"}
+          type={"email"}
+        />
       </div>
       <br />
       <div className="row">
         <label htmlFor={"password"}>Password</label>
-        <input className="input-field" placeholder="Enter your password" onChange={passCheck} id={"password"} type={"password"} />
+        <input
+          className="input-field"
+          placeholder="Enter your password"
+          onChange={passCheck}
+          id={"password"}
+          type={"password"}
+        />
       </div>
 
       {/* Place login error inside this div. Show the div ONLY if there are login errors. */}

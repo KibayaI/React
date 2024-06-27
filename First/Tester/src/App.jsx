@@ -5,6 +5,8 @@ import "./App.css";
 import FilterComponent from "../../FilterWithLift/FilterComponent";
 import sre from "./assets/index.js";
 import Products from "../../Card products/Products.jsx";
+import Todoitemcomponent from "../../UseReducer/Item.jsx";
+import Todos from "../../UseReducer/Todo/ToDoListComponent.jsx";
 
 const initialStories = [
   {
@@ -155,7 +157,7 @@ function App() {
 
   return (
     <div className="App">
-      <input
+      {/* <input
         className="input-field"
         type="text"
         onChange={handleSearch}
@@ -175,8 +177,11 @@ function App() {
         filtered={filtered}
         setFiltered={setFiltered}
       />
-      <hr />
+      <hr /> */}
       <Products />
+
+      {/* <hr />
+      <Todos/> */}
     </div>
   );
 }
