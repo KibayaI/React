@@ -5,11 +5,10 @@ import { cartContext, updatecartContext } from "./Products";
 function Item({ list }) {
   const [color, setColor] = useState("black");
   const [imgIndex, setImgIndex] = useState(0);
-  const [colorAlpah, setColorAlpha] = useState("");
+  const [colorAlpah, setColorAlpha] = useState(color);
 
   const background = {
-    // backgroundColor: `mix(${color}, white, 5%)`,
-    backgroundColor: colorAlpah,
+    backgroundColor: colorAlpah!=color ? colorAlpah : "grey",
   };
 
   const colorColors = {
@@ -92,7 +91,7 @@ function Item({ list }) {
             BUY NOW
           </button>
         </div>
-        <button onClick={addCount}>Add to Cart</button>
+        <button style={{padding: ".5rem 1rem", borderRadius: "20px", backgroundColor: "cyan"}} onClick={addCount}>Add to Cart</button>
       </div>
     </div>
   );

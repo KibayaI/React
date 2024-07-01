@@ -4,7 +4,8 @@ import LoginForm from "./Login/LoginForm";
 import "./App.css";
 import FilterComponent from "../../FilterWithLift/FilterComponent";
 import sre from "./assets/index.js";
-import Products from "../../Card products/Products.jsx";
+// import Products from "../../Card products/Products.jsx";
+import Products from "../../CardAdd product/Products.jsx";
 import Todoitemcomponent from "../../UseReducer/Item.jsx";
 import Todos from "../../UseReducer/Todo/ToDoListComponent.jsx";
 
@@ -179,6 +180,7 @@ function App() {
       />
       <hr /> */}
       <Products />
+      
 
       {/* <hr />
       <Todos/> */}

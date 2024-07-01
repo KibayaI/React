@@ -1,12 +1,12 @@
-import React, { useState, createContext } from "react";
-import Nike from "./Nike";
+import React, { createContext, useState } from "react";
+import List from "./List";
 import { black, red, orange } from "./assests";
-import "./products.css";
-import Button from "./Components/Button";
+import "./Products.css";
 
 export const cartContext = createContext();
 export const updatecartContext = createContext();
-const initialProducts = [
+
+export const initialProducts = [
   {
     title: "Jordan Proto Lyte",
     collection: "Running Collection",
@@ -14,6 +14,7 @@ const initialProducts = [
     availableColors: ["red", "black", "orange"],
     price: 245,
     imageUrl: [black, red, orange],
+    value: 0,
     productID: 0,
   },
   {
@@ -22,6 +23,9 @@ const initialProducts = [
     description: "Designed for comfort and performance.",
     availableColors: ["Blue", "White", "Grey"],
     price: 180,
+    imageUrl: [black, red, orange],
+    value: 0,
+
     productID: 1,
   },
   {
@@ -30,6 +34,9 @@ const initialProducts = [
     description: "Boost technology for ultimate energy return.",
     availableColors: ["Black", "White", "Green"],
     price: 200,
+    imageUrl: [black, red, orange],
+    value: 0,
+
     productID: 2,
   },
   {
@@ -38,6 +45,9 @@ const initialProducts = [
     description: "Fresh Foam midsole cushioning for a plush feel.",
     availableColors: ["Red", "Black", "Blue"],
     price: 150,
+    imageUrl: [black, red, orange],
+    value: 0,
+
     productID: 3,
   },
   {
@@ -46,6 +56,9 @@ const initialProducts = [
     description: "High-performance running shoes with GEL technology.",
     availableColors: ["Yellow", "Black", "Orange"],
     price: 160,
+    imageUrl: [black, red, orange],
+    value: 0,
+
     productID: 4,
   },
   {
@@ -54,6 +67,9 @@ const initialProducts = [
     description: "Engineered for maximum speed and comfort.",
     availableColors: ["Red", "Grey", "Black"],
     price: 130,
+    imageUrl: [black, red, orange],
+    value: 0,
+
     productID: 5,
   },
   {
@@ -62,75 +78,23 @@ const initialProducts = [
     description: "Smooth transitions and soft cushioning for runners.",
     availableColors: ["Blue", "Black", "White"],
     price: 120,
+    imageUrl: [black, red, orange],
+    value: 0,
+          
     productID: 6,
   },
-  {
-    title: "Under Armour HOVR",
-    collection: "Running Collection",
-    description: "HOVR technology provides a zero-gravity feel.",
-    availableColors: ["Green", "Black", "Orange"],
-    price: 140,
-    productID: 7,
-  },
-  {
-    title: "Saucony Kinvara",
-    collection: "Running Collection",
-    description: "Minimalist design with responsive cushioning.",
-    availableColors: ["Red", "Yellow", "Black"],
-    price: 110,
-    productID: 8,
-  },
-  {
-    title: "Mizuno Wave Rider",
-    collection: "Running Collection",
-    description: "Wave technology for smooth and stable rides.",
-    availableColors: ["Black", "White", "Blue"],
-    price: 150,
-    productID: 9,
-  },
 ];
-function Cart() {
-  return <Nike list={initialProducts[0]} />;
-}
 
 function Products() {
-  const [count, useCount] = useState(1);
-
-  function decrement() {
-    if (count > 0) {
-      useCount(count - 1);
-    } else {
-      useCount(count);
-    }
-  }
-
-  function increment() {
-    useCount(count + 1);
-  }
-
-  function hou() {
-    <Cart />;
-  }
-
+  const [count, useCount] = useState(0);
   return (
-    <cartContext.Provider value={count}>
-      <updatecartContext.Provider value={useCount}>
-        <div className="product-card">
-          <Nike list={initialProducts[0]} />
-
-          <div className="cartCard">
-            <button onClick={decrement}>-</button>
-            <label>{count}</label>
-            <button onClick={increment}>+</button>
-            <div className="cartImg">
-              <button onClick={Cart}>show</button>
-            </div>
-
-            {/* <button></button> */}
-          </div>
-        </div>
-      </updatecartContext.Provider>
-    </cartContext.Provider>
+    <div>
+      <cartContext.Provider value={count}>
+        <updatecartContext.Provider value={useCount}>
+          <List list={initialProducts} />
+        </updatecartContext.Provider>
+      </cartContext.Provider>
+    </div>
   );
 }
 

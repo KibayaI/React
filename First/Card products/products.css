@@ -10,8 +10,23 @@
   left: -100px;
 }
 
+.cartCard{
+  border: 4px double cyan;
+  width: fit-content;
+  height: fit-content;
+  padding: 1rem;
+}
+
+.cartImg img{
+  width: auto;
+  border-radius: 0;
+
+}
+
 .product-card {
   height: 90vh;
+  display: flex;
+  gap: 1rem;
   /* background-color: color-mix(red, white, 65%); */
 }
 

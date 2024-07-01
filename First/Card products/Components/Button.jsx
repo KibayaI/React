@@ -9,7 +9,7 @@ function Button({ color, setColor, setImgIndex, setColorAlpha }) {
     // }
     if (color === "red") {
       setImgIndex(1);
-      setColorAlpha("rgb(150, 0, 0)");
+      setColorAlpha("rgb(190, 0, 0)");
 
     } else if (color === "black") {
       setImgIndex(0);
@@ -17,7 +17,7 @@ function Button({ color, setColor, setImgIndex, setColorAlpha }) {
 
     } else {
       setImgIndex(2);
-      setColorAlpha("#FFFF2E");
+      setColorAlpha("rgb(255, 190, 10)");
 
     }
   }
